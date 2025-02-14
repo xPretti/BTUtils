@@ -4,9 +4,6 @@
 class CPointerUtils
 {
   public:
-    CPointerUtils();
-    ~CPointerUtils();
-
     // Verify
     template<typename T>
     static bool IsValid(T* checkClass);
@@ -19,22 +16,11 @@ class CPointerUtils
 };
 
 /**
- * Construtores e Destrutores
- */
-CPointerUtils::CPointerUtils()
-{
-}
-CPointerUtils::~CPointerUtils()
-{
-}
-
-/**
  * Verificações
  */
 template<typename T>
 bool CPointerUtils::IsValid(T* checkClass)
 {
-  // return (checkClass != NULL);
   return (CheckPointer(checkClass) != POINTER_INVALID);
 }
 
