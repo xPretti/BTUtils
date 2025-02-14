@@ -34,6 +34,7 @@ CPointerUtils::~CPointerUtils()
 template<typename T>
 bool CPointerUtils::IsValid(T* checkClass)
 {
+  // return (checkClass != NULL);
   return (CheckPointer(checkClass) != POINTER_INVALID);
 }
 
