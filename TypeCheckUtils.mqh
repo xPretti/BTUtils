@@ -92,7 +92,7 @@ bool CTypeCheckUtils::IsString(string s)
       uint i = 0;
       while(i < s.Length())
         {
-          if(CShortUtils::IsAlpha(s.GetChar(i)) || s.GetChar(i) == ' ')
+          if(CShortUtils::IsText(s.GetChar(i)))
             {
               return (true);
             }
@@ -113,7 +113,7 @@ bool CTypeCheckUtils::IsNumber(string s, double& value)
       uint i = 0;
       while(i < s.Length())
         {
-          if(CShortUtils::IsDigit(s.GetChar(i)) || CShortUtils::IsSignal(s.GetChar(i)))
+          if(CShortUtils::IsDigitDecimal(s.GetChar(i)) || CShortUtils::IsSignal(s.GetChar(i)))
             {
               save += ShortToString(s.GetChar(i));
             }
@@ -141,7 +141,7 @@ bool CTypeCheckUtils::IsNumber(string s, int& value)
       uint i = 0;
       while(i < s.Length())
         {
-          if(CShortUtils::IsDigitInteger(s.GetChar(i)) || CShortUtils::IsSignal(s.GetChar(i)))
+          if(CShortUtils::IsDigit(s.GetChar(i)) || CShortUtils::IsSignal(s.GetChar(i)))
             {
               save += ShortToString(s.GetChar(i));
             }
