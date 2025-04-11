@@ -16,10 +16,11 @@ class CTypeCheckUtils
     static bool IsSymbol(string s);
     static bool IsTimeFrame(string s, ENUM_TIMEFRAMES& value, ENUM_TIMEFRAMES defaultTimeFrame);
     static bool IsSymbol(string s, string& value, string defaultSymbol);
+    static bool IsNumber(string s);
     static bool IsNumber(string s, double& value);
-    static bool IsNumber(string s, int& value);
+    static bool IsNumber(string s, long& value);
     static bool IsDouble(string s, double& value);
-    static bool IsInteger(string s, int& value);
+    static bool IsInteger(string s, long& value);
     static bool IsBoolean(string s);
     static bool IsBoolean(string s, bool& value);
     static bool IsColor(string s, color& value);
@@ -101,6 +102,13 @@ bool CTypeCheckUtils::IsString(string s)
     }
   return (false);
 }
+
+//
+bool CTypeCheckUtils::IsNumber(string s)
+{
+  double value;
+  return (IsNumber(s, value));
+}
 // Retorna se é um numero e converte para double
 bool CTypeCheckUtils::IsNumber(string s, double& value)
 {
@@ -130,7 +138,7 @@ bool CTypeCheckUtils::IsNumber(string s, double& value)
 }
 
 // Retorna se é um numero e converte para int
-bool CTypeCheckUtils::IsNumber(string s, int& value)
+bool CTypeCheckUtils::IsNumber(string s, long& value)
 {
   StringToUpper(s);
   StringReplace(s, " ", "");
@@ -151,7 +159,7 @@ bool CTypeCheckUtils::IsNumber(string s, int& value)
             }
           i++;
         }
-      value = (int)StringToInteger(save);
+      value = StringToInteger(save);
       return (true);
     }
   return (false);
@@ -290,13 +298,13 @@ bool CTypeCheckUtils::IsDouble(string s)
 }
 
 // Verificar se o valor é integer
-bool CTypeCheckUtils::IsInteger(string s, int& value)
+bool CTypeCheckUtils::IsInteger(string s, long& value)
 {
   return (IsNumber(s, value));
 }
 bool CTypeCheckUtils::IsInteger(string s)
 {
-  int value = 0;
+  long value = 0;
   return (IsNumber(s, value));
 }
 

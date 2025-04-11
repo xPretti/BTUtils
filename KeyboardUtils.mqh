@@ -24,6 +24,9 @@ class CKeyboardUtils
     // States
     static bool IsShiftPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_SHIFT) != 0); };
     static bool IsCtrlPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_CONTROL) != 0); };
+    static bool IsCtrlA(int key) { return (IsCtrlPressed() && key=='A'); };
+    //static bool IsCtrlC(int key) { return (IsCtrlPressed() && key=='C'); };
+    //static bool IsCtrlV(int key) { return (IsCtrlPressed() && key=='V'); }; IMPOSSÍVEL, METATRADER NÃO ACEITA O USO DE CTRL + V
     static bool IsAltPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_MENU) != 0); };
     static bool IsCapsLockPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_CAPSLOCK) != 0); };
 };
