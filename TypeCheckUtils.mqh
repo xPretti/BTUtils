@@ -8,9 +8,6 @@
 class CTypeCheckUtils
 {
   public:
-    CTypeCheckUtils();
-    ~CTypeCheckUtils();
-
     // Methods
     static bool IsTimeFrame(string s);
     static bool IsSymbol(string s);
@@ -34,16 +31,6 @@ class CTypeCheckUtils
     static bool IsDouble(string s);
     static bool IsInteger(string s);
 };
-
-/**
- * Construtores e Destrutores
- */
-CTypeCheckUtils::CTypeCheckUtils()
-{
-}
-CTypeCheckUtils::~CTypeCheckUtils()
-{
-}
 
 // Verificar se o valor um timeframe
 bool CTypeCheckUtils::IsTimeFrame(string s)

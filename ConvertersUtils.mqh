@@ -6,9 +6,6 @@
 class CConvertersUtils
 {
   public:
-    CConvertersUtils();
-    ~CConvertersUtils();
-
     // Methods
     static string ToFinancialText(string symbol, double value, uint digits = 2);
 
@@ -65,16 +62,6 @@ class CConvertersUtils
     template<typename T>
     static T ToEnum(string v);
 };
-
-/**
- * Construtores e Destrutores
- */
-CConvertersUtils::CConvertersUtils()
-{
-}
-CConvertersUtils::~CConvertersUtils()
-{
-}
 
 /**
  * Convesores

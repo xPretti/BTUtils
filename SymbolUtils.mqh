@@ -6,9 +6,6 @@
 class CSymbolUtils
 {
   public:
-    CSymbolUtils();
-    ~CSymbolUtils();
-
     // Methods
     static bool Exist(string symbol);
     static bool IsCustom(string symbol);
@@ -17,16 +14,6 @@ class CSymbolUtils
     static string GetSymbol(string symbol);
     static string GetSymbolByPlaceholder(string placeholder, string defaultSymbol);
 };
-
-/**
- * Contrutores e Destrutores
- */
-CSymbolUtils::CSymbolUtils()
-{
-}
-CSymbolUtils::~CSymbolUtils()
-{
-}
 
 /**
  * Retornos

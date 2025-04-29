@@ -4,9 +4,6 @@
 class CKeyboardUtils
 {
   public:
-    CKeyboardUtils();
-    ~CKeyboardUtils();
-
     // Keys
     static bool IsSpace(int id) { return (id == 32); };
     static bool IsBackSpace(int id) { return (id == 8); };
@@ -30,15 +27,5 @@ class CKeyboardUtils
     static bool IsAltPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_MENU) != 0); };
     static bool IsCapsLockPressed() { return (TerminalInfoInteger(TERMINAL_KEYSTATE_CAPSLOCK) != 0); };
 };
-
-/**
- * Contrutores e Destrutores
- */
-CKeyboardUtils::CKeyboardUtils()
-{
-}
-CKeyboardUtils::~CKeyboardUtils()
-{
-}
 
 #endif /* KEYBOARDUTILS_INCLUDED */
