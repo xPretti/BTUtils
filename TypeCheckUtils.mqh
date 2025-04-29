@@ -17,6 +17,7 @@ class CTypeCheckUtils
     static bool IsNumber(string s, double& value);
     static bool IsNumber(string s, long& value);
     static bool IsDouble(string s, double& value);
+    static bool IsInteger(string s, int& value);
     static bool IsInteger(string s, long& value);
     static bool IsBoolean(string s);
     static bool IsBoolean(string s, bool& value);
@@ -285,6 +286,13 @@ bool CTypeCheckUtils::IsDouble(string s)
 }
 
 // Verificar se o valor é integer
+bool CTypeCheckUtils::IsInteger(string s, int& value)
+{
+  long value2 = 0;
+  bool success = IsNumber(s, value2);
+  value = (int)value2;
+  return (success);
+}
 bool CTypeCheckUtils::IsInteger(string s, long& value)
 {
   return (IsNumber(s, value));
