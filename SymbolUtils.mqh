@@ -37,7 +37,7 @@ bool CSymbolUtils::Exist(string symbol)
 // Retorna o symbol, caso for SYMBOL ou ' ', então será Symbol()
 string CSymbolUtils::GetSymbol(string symbol)
 {
-  string param = CStringUtils::GetNoSpace(symbol);
+  string param = CStringUtils::RemoveSpaces(symbol);
   if(param == "SYMBOL" || param == "")
     {
       return (Symbol());
@@ -51,7 +51,7 @@ string CSymbolUtils::GetSymbol(string symbol)
  */
 string CSymbolUtils::GetSymbolByPlaceholder(string placeholder, string defaultSymbol)
 {
-  if(CStringUtils::GetNoSpace(placeholder) == "REAL")
+  if(CStringUtils::RemoveSpaces(placeholder) == "REAL")
     {
       return (defaultSymbol);
     }
