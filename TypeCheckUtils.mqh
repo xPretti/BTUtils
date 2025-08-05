@@ -4,6 +4,7 @@
 #include "ShortUtils.mqh"
 #include "SymbolUtils.mqh"
 #include "TimeFrameUtils.mqh"
+#include "StringUtils.mqh"
 
 class CTypeCheckUtils
 {
@@ -61,8 +62,7 @@ bool CTypeCheckUtils::IsSymbol(string s)
 }
 bool CTypeCheckUtils::IsSymbol(string s, string& value, string defaultSymbol)
 {
-  StringToUpper(s);
-  StringReplace(s, " ", "");
+  s = CStringUtils::Trim(s);
   bool isSymbol = false;
   string value1 = CSymbolUtils::GetSymbolByPlaceholder(s, defaultSymbol);
   if(value1 != "NULL")

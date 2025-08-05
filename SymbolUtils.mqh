@@ -38,7 +38,7 @@ bool CSymbolUtils::Exist(string symbol)
 string CSymbolUtils::GetSymbol(string symbol)
 {
   string param = CStringUtils::RemoveSpaces(symbol);
-  if(param == "SYMBOL" || param == "")
+  if(CStringUtils::EqualIgnoreCase(param, "SYMBOL") || param == "")
     {
       return (Symbol());
     }
@@ -51,7 +51,7 @@ string CSymbolUtils::GetSymbol(string symbol)
  */
 string CSymbolUtils::GetSymbolByPlaceholder(string placeholder, string defaultSymbol)
 {
-  if(CStringUtils::RemoveSpaces(placeholder) == "REAL")
+  if(CStringUtils::EqualIgnoreCase(CStringUtils::RemoveSpaces(placeholder), "REAL"))
     {
       return (defaultSymbol);
     }
